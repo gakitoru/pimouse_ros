@@ -1,17 +1,17 @@
 #!/bin/bash -xve
 
 #required packages
-pip install catkin_pkg
-pip install empty
-pip install pyyaml
-pip install rospkg
+sudo pip install catkin_pkg
+sudo pip install empy
+sudo pip install pyyaml
+sudo pip install rospkg
 
 #ros install
 cd ..
 git clone https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu14.04_server.git
 cd ./ros_setup_scripts_Ubuntu14.04_server
-bash ./setup0.bash
-bash ./setup1.bash
+bash ./step0.bash
+bash ./step1.bash
 
 #catkin setup
 mkdir -p ~/catkin_ws/src
