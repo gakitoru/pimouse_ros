@@ -1,1 +1,0 @@
-lightsensors1.py
