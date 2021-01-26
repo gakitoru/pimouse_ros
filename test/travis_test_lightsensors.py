@@ -8,6 +8,15 @@ from pimouse_ros.msg import LightSensorValues
 
 class LightSensorTest(unittest.TestCase):
 
+    def setUp(self):
+        self.count = 0
+        rospy.Subscriber('/lightsensors', LightSensorValues, self.callback)
+        self.values = LightSensorValues()
+
+    def callback(self, data):
+        self.count += 1
+        self.values = data
+        
     def check_values(self, lf, ls, rs, rf):
         vs = self.values
         self.assertEqual(vs.left_forward, lf, "different value: left forward")
